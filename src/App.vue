@@ -2,7 +2,6 @@
 import { reactive, ref } from "vue";
 import axios from "axios"
 
-
 const randCardNum = Math.floor(Math.random() * 58);
 const randMeaningNum = Math.floor(Math.random() * 3);
 
@@ -15,7 +14,6 @@ axios.get('tarot-images.json')
     resultState.suit = data.data.cards[randCardNum].suit
     resultState.img = data.data.cards[randCardNum].img
     resultState.Archetype = data.data.cards[randCardNum].Archetype
-
   });
 
 const clicked = ref(false)
@@ -44,7 +42,6 @@ const getTarot = () => {
       resultState.suit = data.data.cards[randCardNum].suit
       resultState.img = data.data.cards[randCardNum].img
       resultState.Archetype = data.data.cards[randCardNum].Archetype
-
     });
   clicked.value = false
   isFlipped.value = false
@@ -53,19 +50,27 @@ const getTarot = () => {
 const isClicked = () => {
   clicked.value = true
   isFlipped.value = !isFlipped.value
-  console.log("hello")
 }
 
 </script>
 <template>
-  <h2>Welcome</h2>
-  <div>Click the card to reveal your card</div>
+  <div class="title">
+    <h2>Welcome</h2>
+    <div>Click to reveal your card</div>
+  </div>
   <section>
     <div class="card">
-      <div class="inner-card">
-        <img v-if="isFlipped" v-bind:src="'/src/assets/cards/' + resultState.img" @click="isClicked" class="cardFront">
-        <img v-if="isFlipped === false" src="/src/assets/cards/cardBack.jpg" @click="isClicked" class="cardBack">
-      </div>
+      <transition name="fade-card">
+        <div v-if="isFlipped === false" class="inner-card">
+          <img src="/src/assets/cards/cardBack.jpg" @click="isClicked" class="cardBack">
+        </div>
+      </transition>
+      <transition name="fade-card">
+        <div v-if="isFlipped" class="inner-card">
+          <img v-bind:src="'/src/assets/cards/' + resultState.img" @click="isClicked" class="cardFront">
+        </div>
+      </transition>
+
       <div class="card-info">
         <transition name="fade">
           <div v-if="clicked">
@@ -80,14 +85,35 @@ const isClicked = () => {
 </template>
 
 <style scoped>
+h2{
+  margin: 1vh;
+}
+.title{
+  margin: 5vh;
+}
 .card {
+  position: relative;
   padding: 5px;
+  display: flex;
+  place-items: center;
+  align-items: center;
+}
+
+.inner-card {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15vh;
+  left: 0;
+  right: 0;
+  text-align: center;
+
 }
 
 .card-info {
   color: black;
   background-color: #f1f1f1;
-  min-width: 5rem;
+  min-width: 30rem;
   min-height: 5rem;
   border-radius: 26px;
   padding: 0;
@@ -95,11 +121,13 @@ const isClicked = () => {
   font-weight: 500;
   text-align: center;
   align-items: center;
+  margin-top: 45vh;
+  position: relative;
 }
 
 .cardFront {
-  max-height: 33.6rem;
-  width: 24rem;
+  max-height: 25rem;
+  width: 16rem;
   border-radius: 22px;
   max-width: 20.5rem;
   object-position: 5px;
@@ -110,8 +138,18 @@ button {
 }
 
 .cardBack {
-  max-width: 20.5rem;
+  max-width: 15.5rem;
   border-radius: 24px;
+}
+
+.fade-card-enter-active,
+.fade-card-leave-active {
+  transition: opacity 1s ease;
+}
+
+.fade-card-enter-from,
+.fade-card-leave-to {
+  opacity: 0;
 }
 
 .fade-enter-active,
