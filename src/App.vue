@@ -60,11 +60,13 @@ const isClicked = () => {
   </div>
   <section>
     <div class="card">
+
       <transition name="fade-card">
         <div v-if="isFlipped === false" class="inner-card">
           <img src="/src/assets/cards/cardBack.jpg" @click="isClicked" class="cardBack">
         </div>
       </transition>
+
       <transition name="fade-card">
         <div v-if="isFlipped" class="inner-card">
           <img v-bind:src="'/src/assets/cards/' + resultState.img" @click="isClicked" class="cardFront">
@@ -78,6 +80,7 @@ const isClicked = () => {
             <div>{{ resultState.meaning_rev }}</div>
           </div>
         </transition>
+
       </div>
     </div>
     <button class="retry" @click="getTarot">Retry</button>
@@ -85,12 +88,15 @@ const isClicked = () => {
 </template>
 
 <style scoped>
-h2{
+h2 {
   margin: 1vh;
 }
-.title{
+
+.title {
   margin: 5vh;
+  
 }
+
 .card {
   position: relative;
   padding: 5px;
@@ -118,7 +124,6 @@ h2{
   border-radius: 26px;
   padding: 0;
   margin: 0;
-  font-weight: 500;
   text-align: center;
   align-items: center;
   margin-top: 45vh;
@@ -144,7 +149,7 @@ button {
 
 .fade-card-enter-active,
 .fade-card-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 1.5s ease;
 }
 
 .fade-card-enter-from,
@@ -154,7 +159,7 @@ button {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 1s ease;
+  transition: opacity 1.5s ease;
 }
 
 .fade-enter-from,
