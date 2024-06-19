@@ -71,7 +71,7 @@ defineExpose({ getTarot })
 
         <transition name="fade-card">
             <div v-if="isFlipped" class="inner-card">
-                <img v-bind:src="'public/cards/' + resultState.img" @click="isClicked" class="cardFront">
+                <img v-bind:src="'/cards/' + resultState.img" @click="isClicked" class="cardFront">
             </div>
         </transition>
         <div class="card-Info-Container">
