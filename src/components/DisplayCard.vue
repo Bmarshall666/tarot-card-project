@@ -20,7 +20,7 @@ const resultState = reactive({
 
 const emit = defineEmits(["cardInfo"])
 
-axios.get('tarot-images.json')
+axios.get('/tarot-images.json')
     .then((data) => {
         resultState.name = data.data.cards[randCardNum].name
         resultState.number = data.data.cards[randCardNum].number
@@ -36,7 +36,7 @@ const getTarot = () => {
     const randCardNum = Math.floor(Math.random() * 58);
     const randMeaningNum = Math.floor(Math.random() * 3);
 
-    axios.get('tarot-images.json')
+    axios.get('/tarot-images.json')
         .then((data) => {
             resultState.name = data.data.cards[randCardNum].name
             resultState.number = data.data.cards[randCardNum].number
