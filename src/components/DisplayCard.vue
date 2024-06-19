@@ -100,7 +100,6 @@ defineExpose({ getTarot })
     width: 16rem;
     border-radius: 22px;
     max-width: 20.5rem;
-    object-position: 5px;
 }
 
 .cardBack {
