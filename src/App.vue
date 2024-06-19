@@ -84,7 +84,7 @@ button:focus-visible {
     cursor: pointer;
     transition: border-color 0.25s;
     left: calc(50vw - 40px);
-    top: calc(25vh - 5px);
+    top: calc(25vh + 10px);
   }
 }
 
