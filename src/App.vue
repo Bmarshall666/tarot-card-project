@@ -49,6 +49,7 @@ button {
   transition: border-color 0.25s;
   left: calc(50vw - 40px);
   top: calc(25vh - 15px);
+  appearance: none;
 }
 
 button:hover {
@@ -85,6 +86,7 @@ button:focus-visible {
     transition: border-color 0.25s;
     left: calc(50vw - 40px);
     top: calc(25vh + 10px);
+    appearance: none;
   }
 }
 
