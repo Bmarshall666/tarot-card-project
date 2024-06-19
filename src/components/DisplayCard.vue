@@ -65,7 +65,7 @@ defineExpose({ getTarot })
     <div class="card">
         <transition name="fade-card">
             <div v-if="isFlipped === false" class="inner-card">
-                <img src="public/cards/cardBack.jpg" @click="isClicked" class="cardBack">
+                <img src="/public/cards/cardBack.jpg" @click="isClicked" class="cardBack">
             </div>
         </transition>
 
