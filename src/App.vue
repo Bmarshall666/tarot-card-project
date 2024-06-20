@@ -119,6 +119,7 @@ button:focus-visible {
     left: calc(50vw - 40px);
     top: calc(25vh + 10px);
     -webkit-appearance: none;
+    appearance: none;
 
   }
 }
