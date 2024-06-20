@@ -5,10 +5,10 @@ import axios from "axios";
 var clicked = ref(false)
 var isFlipped = ref(false)
 
-const randCardNum = Math.floor(Math.random() * 58);
-const randMeaningNum = Math.floor(Math.random() * 3);
+var randCardNum = Math.floor(Math.random() * 58);
+var randMeaningNum = Math.floor(Math.random() * 3);
 
-const resultState = reactive({
+var resultState = reactive({
     name: "",
     number: "",
     arcana: "",
@@ -18,7 +18,7 @@ const resultState = reactive({
     Archetype: ""
 })
 
-const emit = defineEmits(["cardInfo"])
+var emit = defineEmits(["cardInfo"])
 
 axios.get('/tarot-images.json')
     .then((data) => {
@@ -32,9 +32,9 @@ axios.get('/tarot-images.json')
     });
 
 
-const getTarot = () => {
-    const randCardNum = Math.floor(Math.random() * 58);
-    const randMeaningNum = Math.floor(Math.random() * 3);
+var getTarot = () => {
+    var randCardNum = Math.floor(Math.random() * 58);
+    var randMeaningNum = Math.floor(Math.random() * 3);
 
     axios.get('/tarot-images.json')
         .then((data) => {
