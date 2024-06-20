@@ -60,7 +60,7 @@ defineExpose({ getTarot })
             </div>
         </transition>
 
-        <button @click="getTarot()">Retry</button>
+        <button @click="getTarot">Retry</button>
 
         <div class="card-Info-Container">
             <transition name="fade">
@@ -76,6 +76,34 @@ defineExpose({ getTarot })
 
 
 <style lang="scss" scoped>
+
+button {
+  position: absolute;
+  color: black;
+  border-radius: 8px;
+  border: 3px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  left: calc(50vw - 40px);
+  top: calc(25vh - 15px);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button:hover {
+  border-color: #8d90bb;
+}
+
+button:focus,
+button:focus-visible {
+  border-color: 4px auto #8d90bb;
+}
+
 .card {
     position: relative;
     display: flex;
@@ -152,6 +180,25 @@ defineExpose({ getTarot })
         position: absolute;
         top: calc(18vh + 10px);
     }
+
+    button {
+    position: absolute;
+    color: black;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    left: calc(50vw - 40px);
+    top: calc(25vh + 50px);
+    -webkit-appearance: none;
+    appearance: none;
+
+  }
 }
 
 @media (min-width: 768px) and (max-width:2000px) {
@@ -171,5 +218,23 @@ defineExpose({ getTarot })
         position: absolute;
         top: calc(18vh - 10px);
     }
+
+    button {
+    position: absolute;
+    color: black;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    left: calc(50vw - 40px);
+    top: calc(25vh + 10px);
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }
 </style>
