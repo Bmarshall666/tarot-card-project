@@ -17,7 +17,7 @@ var resultState = reactive({
 
 var emit = defineEmits(["cardInfo"])
 
-onMounted(() => {
+onMounted(() =>{
     getTarot()
 })
 
@@ -47,8 +47,7 @@ var isClicked = () => {
 defineExpose({ getTarot })
 
 </script>
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
 <template>
     <div class="card">
         <transition name="fade-card">
