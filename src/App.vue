@@ -61,13 +61,43 @@ button:focus-visible {
 }
 
 
-@media (max-width:856px) {
+@media (min-width: 370px) and (max-width: 768px) {
   .container {
     position: relative;
     display: inline;
     align-items: center;
     justify-content: center;
     top: calc(50vh - 100px);
+  }
+  
+
+  button {
+    position: absolute;
+    color: black;
+    border-radius: 8px;
+    border: 3px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    left: calc(50vw - 40px);
+    top: calc(25vh + 50px);
+  }
+}
+
+
+
+
+@media (min-width: 768px) and (max-width:2000px) {
+  .container {
+    position: relative;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    top: calc(50vh - 70px);
   }
   
 

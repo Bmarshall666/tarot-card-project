@@ -146,7 +146,7 @@ defineExpose({ getTarot })
     opacity: 0;
 }
 
-@media (max-width:856px) {
+@media (min-width: 360px) and (max-width: 768px) {
     .cardFront {
         height: 12.5rem;
         width: 8rem;
@@ -162,7 +162,26 @@ defineExpose({ getTarot })
 
     .card-Info-Container {
         position: absolute;
-        top: calc(18vh - 20px);
+        top: calc(18vh + 10px);
+    }
+}
+
+@media (min-width: 768px) and (max-width:2000px) {
+    .cardFront {
+        height: 16.5rem;
+        width: 10.5rem;
+        border-radius: 22px;
+        max-width: 20.5rem;
+    }
+
+    .cardBack {
+        max-width: 10rem;
+        border-radius: 15px;
+    }
+
+    .card-Info-Container {
+        position: absolute;
+        top: calc(18vh - 10px);
     }
 }
 </style>
