@@ -17,7 +17,7 @@ var resultState = reactive({
 
 var emit = defineEmits(["cardInfo"])
 
-var onMounted(() =>{
+onMounted(() =>{
     getTarot()
 })
 
@@ -45,8 +45,6 @@ var isClicked = () => {
 }
 
 defineExpose({ getTarot })
-
-
 
 </script>
 
