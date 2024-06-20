@@ -9,9 +9,7 @@ import DisplayCard from './components/DisplayCard.vue';
   <div class="container">
     <DisplayCard ref="cardRef" @card-info="cardInfo" />
     <button @click="$refs.cardRef.getTarot()">Retry</button>
-
   </div>
-
 </template>
 
 <style scoped>
@@ -50,6 +48,7 @@ button {
   left: calc(50vw - 40px);
   top: calc(25vh - 15px);
   -webkit-appearance: none;
+  appearance: none;
 }
 
 button:hover {
@@ -87,6 +86,7 @@ button:focus-visible {
     left: calc(50vw - 40px);
     top: calc(25vh + 50px);
     -webkit-appearance: none;
+    appearance: none;
 
   }
 }
@@ -120,7 +120,6 @@ button:focus-visible {
     top: calc(25vh + 10px);
     -webkit-appearance: none;
     appearance: none;
-
   }
 }
 
