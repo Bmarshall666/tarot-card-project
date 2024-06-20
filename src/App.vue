@@ -2,6 +2,7 @@
 import DisplayCard from './components/DisplayCard.vue';
 </script>
 <template>
+  <button>fart</button>
   <div class="title">
     <h2>Welcome</h2>
     <div class="">Click to reveal your card</div>
