@@ -2,8 +2,8 @@
 import { reactive, ref } from "vue";
 import axios from "axios";
 
-const clicked = ref(false)
-const isFlipped = ref(false)
+var clicked = ref(false)
+var isFlipped = ref(false)
 
 const randCardNum = Math.floor(Math.random() * 58);
 const randMeaningNum = Math.floor(Math.random() * 3);
@@ -50,7 +50,7 @@ const getTarot = () => {
     isFlipped.value = false
 }
 
-const isClicked = () => {
+var isClicked = () => {
     clicked.value = true
     isFlipped.value = !isFlipped.value
 }
