@@ -15,8 +15,6 @@ var resultState = reactive({
     Archetype: ""
 })
 
-var emit = defineEmits(["cardInfo"])
-
 onMounted(() =>{
     getTarot()
 })
@@ -61,6 +59,9 @@ defineExpose({ getTarot })
                 <img v-bind:src="'/cards/' + resultState.img" @click="isClicked" class="cardFront">
             </div>
         </transition>
+
+        <button @click="getTarot()">Retry</button>
+
         <div class="card-Info-Container">
             <transition name="fade">
                 <div v-if="clicked" class="card-Info">

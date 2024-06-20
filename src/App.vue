@@ -7,8 +7,8 @@ import DisplayCard from './components/DisplayCard.vue';
     <div class="">Click to reveal your card</div>
   </div>
   <div class="container">
-    <DisplayCard ref="cardRef" @card-info="cardInfo" />
-    <button @click="$refs.cardRef.getTarot()">Retry</button>
+    <DisplayCard ref="cardRef" />
+    <!-- <button @click="$refs.cardRef.getTarot()">Retry</button> -->
   </div>
 </template>
 
