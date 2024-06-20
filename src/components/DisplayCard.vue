@@ -1,12 +1,9 @@
 <script setup>
-import { reactive, ref } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import axios from "axios";
 
 var clicked = ref(false)
 var isFlipped = ref(false)
-
-var randCardNum = Math.floor(Math.random() * 58);
-var randMeaningNum = Math.floor(Math.random() * 3);
 
 var resultState = reactive({
     name: "",
@@ -20,17 +17,9 @@ var resultState = reactive({
 
 var emit = defineEmits(["cardInfo"])
 
-axios.get('/tarot-images.json')
-    .then((data) => {
-        resultState.name = data.data.cards[randCardNum].name
-        resultState.number = data.data.cards[randCardNum].number
-        resultState.arcana = data.data.cards[randCardNum].arcana
-        resultState.meaning_rev = data.data.cards[randCardNum].meanings.light[randMeaningNum]
-        resultState.suit = data.data.cards[randCardNum].suit
-        resultState.img = data.data.cards[randCardNum].img
-        resultState.Archetype = data.data.cards[randCardNum].Archetype
-    });
-
+var onMounted(() =>{
+    getTarot()
+})
 
 var getTarot = () => {
     var randCardNum = Math.floor(Math.random() * 58);
