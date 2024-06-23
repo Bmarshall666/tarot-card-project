@@ -60,7 +60,7 @@ defineExpose({ getTarot })
             </div>
         </transition>
 
-        <button @click="getTarot">Retry</button>
+        <button v-if="isFlipped" @click="getTarot">Retry</button>
 
         <div class="card-Info-Container">
             <transition name="fade">
